@@ -14,3 +14,21 @@
  * find both ways!
  *
  */
+
+console.log("************** 5's **********************")
+for (let i=5; i<1000; i += 5) {
+    console.log(i);
+}
+
+console.log("************** 100 downTo -100 **********************")
+for (let i=100; i>=-100; i--) {
+    console.log(i);
+}
+
+console.log("************** REDICULOUS COUNT!! **********************")
+let counter=0;
+for (let i=0; i <= 5000; i++) {
+    counter += (i%2 ==0 ? 3 : -1);
+    console.log(counter);
+}
+//result is 5003

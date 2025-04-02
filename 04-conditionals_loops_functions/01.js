@@ -40,7 +40,44 @@ function getRandomNumber(){
  *
  */
 
-let randomNumber = getRandomNumber() + getRandomNumber()
+let age = Math.floor((Math.random() * 100) + 1);
+let price = 0;
+let fare = "";
+let charge = "";
 
-console.log(randomNumber)
+if (age < 5) {
+    fare = "free";
+    price = 0;
+} else if (age < 13) {
+    fare = "child";
+    price = 1;
+} else if (age < 21) {
+    fare = "teenage";
+    price = 2;
+} else if (age < 30) {
+    fare = "young person";
+    price = 5;
+} else if (age < 65) {
+    fare = "adult";
+    price = 10;
+} else {
+    fare = "pensioner";
+    price = 3;
+}
+
+charge = `, that will be ${price} dollar${price!=1?"s":""}, please.`;
+
+if (price>0) {
+    if (getRandomNumber()  == 1) {
+        charge = ". Lucky you! Today you get to ride free of charge.";
+    }
+}
+
+console.log(`You pay the ${fare} fare${charge}`)
+
+
+
+
+
+
 

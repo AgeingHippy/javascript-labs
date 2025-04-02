@@ -22,12 +22,41 @@
 
 // Write your code here:
 
+function KtoC(kelvin) {
+    return kelvin + 273.15;
+}
 
+function CtoK(celcius) {
+    return celcius - 273.15;
+}
 
+function FtoK(farenheit) {
+    return (farenheit -32) * (5/9) + 273.15;
+}
 
+function KtoF(kelvin) {
+    return (kelvin - 273.15) * (9/5) +32;
+}
 
+function pythagoras(x,y) {
+    return ((x**2)+(y**2))**(1/2);
+}
 
+function inchToCm(inch) {
+    return inch*2.54;
+}
 
+function CmToInch(cm) {
+    return cm/2.54;
+}
+
+function KmToM(km) {
+    return km*0.621371;
+}
+
+function MToKm(miles) {
+    return miles/0.621371;
+}
 
 
 // Do not modify anything below this line
