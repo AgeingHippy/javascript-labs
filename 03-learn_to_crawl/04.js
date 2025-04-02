@@ -21,5 +21,17 @@
  * with clear and descriptive names.
  */
 
-let result = 0
-console.log("Label", result)
+let firstNumber = 1234;
+let secondNumber = 5678;
+let thirdNumber = 9101;
+let luckyNumber = 7;
+
+console.log(`${{firstNumber}} + ${secondNumber} + ${thirdNumber} = ${firstNumber + secondNumber + thirdNumber}`);
+
+console.log(`${thirdNumber} - (${firstNumber} + ${secondNumber} = ${thirdNumber - (firstNumber + secondNumber)}`);
+console.log(`${firstNumber} * ${secondNumber} * ${thirdNumber} = ${firstNumber * secondNumber * thirdNumber}`);
+console.log(`${thirdNumber} / (${firstNumber} - ${secondNumber}) = ${thirdNumber / (firstNumber - secondNumber)}`);
+console.log(`${firstNumber} % ${luckyNumber} = ${firstNumber % luckyNumber}`);
+console.log(`${secondNumber} % ${luckyNumber} = ${secondNumber % luckyNumber}`);
+console.log(`${thirdNumber} % ${luckyNumber} = ${thirdNumber % luckyNumber}`);
+
