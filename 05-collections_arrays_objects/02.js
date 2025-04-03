@@ -16,5 +16,16 @@ lengths = [
  * paste the code you wrote previously into this file.
  */
 
+function inchToCm(inch) {
+    return inch*2.54;
+}
 
+//1
+let centimeters = [];
+lengths.forEach(element => {
+    centimeters.push(inchToCm(element))
+});
+
+//2
+console.log(`The average length in cm is ${sumArray(centimeters)/centimeters.length} , which is ${sumArray(lengths)/lengths.length} in inches`);
 
