@@ -13,7 +13,7 @@
  *
  * Remove the first sub array containing headers without manually deleting it.
  * Do you remember the method to remove the first element of an array?
- * 
+ *
  * Then, using forEach and arrow functions:
  *
  * 1. Output the total amount of expenses for 2017 and 2018.
@@ -35,7 +35,7 @@ let expenses = [
     "Amount",
     "Account",
     "Account #",
-    "Institution"
+    "Institution",
   ],
   [
     "2018-02-14T05:00:00.000Z",
@@ -938,3 +938,77 @@ let expenses = [
     "Bank of America - Credit Card",
   ],
 ];
+
+// * Remove the first sub array containing headers without manually deleting it.
+// * Do you remember the method to remove the first element of an array?
+
+expenses.shift();
+
+// * Then, using forEach and arrow functions:
+// *
+// * 1. Output the total amount of expenses for 2017 and 2018.
+let total2017 = 0;
+let total2018 = 0;
+expenses.forEach((element) => {
+  let fullYear = new Date(element[0]).getFullYear();
+  if (fullYear == 2017) {
+    total2017 += element[3];
+  } else if (fullYear == 2018) {
+    total2018 += element[3];
+  }
+});
+
+console.log(`Expenses for 2017 are ${total2017}`);
+console.log(`Expenses for 2018 are ${total2018}`);
+
+// * 2. Output the total amount paid for Groceries.
+total = 0;
+expenses.forEach((element) => {
+  if (element[2] == "Groceries") {
+    total += element[3];
+  }
+});
+
+// * 3. Output the total difference in each account after all transactions. So if
+// *    $100 was deposited into the account and $50 spent, then the total change
+// *    would be $50.
+// [
+//   "Date",
+//   "Description",
+//   "Category",
+//   "Amount",
+//   "Account",
+//   "Account #",
+//   "Institution",
+// ],
+
+let accounts = new Map();
+expenses.forEach((element) => {
+  let account = element[4];
+  if (!accounts.has(account)) {
+    accounts.set(account, 0);
+  }
+  accounts.set(account, accounts.get(account) + element[3]);
+});
+
+accounts.forEach((value, key) =>
+  console.log(`The "${key}" account has balance ${value}`)
+);
+
+// * 4. Create a new array where each row only has the "date", "description", and "amount"
+// *    fields of rows that have the category "Eating Out".
+let eatingOutArray = [];
+expenses.forEach((element) => {
+  if (element[2] == "Eating Out") {
+    eatingOutArray.push([element[0], element[1], element[3]]);
+  }
+});
+
+// * 5. Create another array where each row only has the "date", "description", and "amount"
+// *    fields of rows that have that have the category "Gear and Clothing".
+let gearAndClothingArray = [];
+expenses.forEach((element) => {
+  if (element[2] == "Gear and Clothing") {
+    gearAndClothingArray.push([element[0], element[1], element[3]]);
+  }
+});
