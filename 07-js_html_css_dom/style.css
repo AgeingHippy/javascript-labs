@@ -1,0 +1,21 @@
+body {
+    background:grey;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
+    display: flow-root;
+}
+div.float-primary {
+    float: left;
+    width: 75%;
+}
+
+div.float-sidebar {
+    float: right;
+    width: 25%;
+}
+
+footer {
+    clear: both;
+}
