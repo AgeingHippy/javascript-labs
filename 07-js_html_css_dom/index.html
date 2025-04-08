@@ -5,24 +5,33 @@
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    
     <div id="main" class="container">
-        <h1>Header Here</h1>
+      <h1>Header Here</h1>
       <div id="primary" class="container float-primary">
-        
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque elit eget gravida cum sociis. Dignissim diam quis enim lobortis scelerisque fermentum.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Pellentesque elit eget gravida cum sociis. Dignissim diam quis enim
+          lobortis scelerisque fermentum.
         </p>
         <h3>Sub Heading 1</h3>
         <h3>Sub Heading 2</h3>
         <h3>Sub Heading 3</h3>
       </div>
       <div id="sidebar" class="container float-sidebar">
-        <p>sidebar text</p>
+        <button type="button" id="darkmode-button">dark mode</button>
       </div>
     </div>
     <footer>
       <p>Charles McDonald - <span>2025</span></p>
     </footer>
+    <script>
+      document
+        .getElementById("darkmode-button")
+        .addEventListener("click", () => {
+          document.body.style.backgroundColor = "black";
+          document.body.style.color ="white"
+        });
+    </script>
   </body>
 </html>
