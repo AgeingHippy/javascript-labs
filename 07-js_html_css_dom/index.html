@@ -37,9 +37,14 @@
       <p>Charles McDonald - <span>2025</span></p>
     </footer>
     <script>
-      function setDarkMode(e) {
-        document.body.style.backgroundColor = e ? "black" : "white";
-        document.body.style.color = e ? "white" : "black";
+      function darkModeFunction() {
+        let darkMode = false;
+        return function toggleDarkMode() {
+          darkMode = !darkMode;
+          document.body.style.backgroundColor = darkMode ? "black" : "white";
+          document.body.style.color = darkMode ? "white" : "black";
+          document.getElementById("darkmode-button").textContent = darkMode ? "light mode" : "dark mode";
+        };
       }
 
       function changeTextSize(increment) {
@@ -54,9 +59,7 @@
 
       document
         .getElementById("darkmode-button")
-        .addEventListener("click", () => {
-          setDarkMode(true);
-        });
+        .addEventListener("click", darkModeFunction());
 
       document
         .getElementById("bigger-text-button")
